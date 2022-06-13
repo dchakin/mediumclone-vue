@@ -1,13 +1,12 @@
 <template>
   <nav class='navbar navbar-light'>
     <div class='container'>
-      <router-link class='navbar-brand' :to="{name: 'home'}">
+      <router-link class='navbar-brand' :to="{name: 'globalFeed'}">
         MediumClone
       </router-link>
       <ul class='nav navbar-nav pull-xs-right'>
         <li class='nav-item'>
-          <router-link class='nav-link' :to="{name: 'home'}">
-            Home
+          <router-link class='nav-link' :to="{name: 'globalFeed'}">
           </router-link>
         </li>
         <template v-if='isLoggedIn'>
@@ -28,13 +27,13 @@
               class='nav-link'
               :to="{name: 'userProfile', params: {slug: currentUser.username}}">
               <img class='user-pic' :src='currentUser.image' alt=''/>
-              &nbsp;
+              &nbsp;&nbsp;
               {{ currentUser.username }}
             </router-link>
           </li>
         </template>
 
-        <template v-if='!isLoggedIn'>
+        <template v-if='isAnonymous'>
           <li class='nav-item'>
             <router-link class='nav-link' :to="{name: 'createArticle'}">
               <i class='ion-compose'></i>&nbsp;New Article
@@ -53,15 +52,17 @@
 </template>
 
 <script>
-import {mapState} from 'vuex';
+import {getterTypes} from '../store/modules/auth';
+import {mapGetters} from 'vuex';
 
 export default {
   name: 'McvTopbar',
 
   computed: {
-    ...mapState({
-      currentUser: state => state.auth.currentUser,
-      isLoggedIn: state => state.auth.isLoggedIn
+    ...mapGetters({
+      currentUser: getterTypes.currentUser,
+      isLoggedIn: getterTypes.isLoggedIn,
+      isAnonymous: getterTypes.isAnonymous
     })
   }
 };
