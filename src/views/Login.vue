@@ -45,7 +45,7 @@ import McvValidationErrors from '@/components/ValidationErrors';
 import {actionTypes} from '@/store/modules/auth';
 
 export default {
-  name: 'McvLogin',
+  name: 'Login',
   // store: store,
   components: {
     McvValidationErrors

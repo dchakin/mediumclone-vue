@@ -16,7 +16,7 @@
 import {range} from '@/helpers/utils';
 
 export default {
-  name: 'McvPagintaion',
+  name: 'Pagintaion',
   props: {
     total: {
       type: Number,

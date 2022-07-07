@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'McvValidationErrors',
+  name: 'ValidationErrors',
   props: {
     validationErrors: {
       type: Object,

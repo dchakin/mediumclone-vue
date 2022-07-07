@@ -56,7 +56,7 @@ import {getterTypes} from '../store/modules/auth';
 import {mapGetters} from 'vuex';
 
 export default {
-  name: 'McvTopbar',
+  name: 'Topbar',
 
   computed: {
     ...mapGetters({

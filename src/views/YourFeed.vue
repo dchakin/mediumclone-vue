@@ -19,10 +19,10 @@
 import Feed from '@/components/Feed';
 import PopularTags from '@/components/PopularTags'
 import Banner from '@/components/Banner'
-import FeedToggler from '@/components/FeedToggler';
+import FeedToggler  from '@/components/FeedToggler'
 
 export default {
-  name: 'McvGlobalFeed',
+  name: 'YourFeed',
   components: {
     Feed,
     PopularTags,
@@ -31,7 +31,7 @@ export default {
   },
   data() {
     return {
-      apiUrl: '/articles'
+      apiUrl: '/articles/feed'
     }
   }
 };
